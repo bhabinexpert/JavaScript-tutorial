@@ -1,0 +1,29 @@
+JavaScript Execution Context and Call Stack
+JavaScript Execution Context:
+- An execution context is an abstract concept that holds information about the environment within which JavaScript code is executed.
+- It contains the scope, variables, and the value of `this`. 
+- There are three types of execution contexts:
+  1. Global Execution Context: The default context where the JavaScript code runs initially.
+  2. Function Execution Context: Created whenever a function is invoked.
+  3. Eval Execution Context: Created when code is executed inside an `eval()` function.
+- Each execution context has its own variable object, scope chain, and `this` value.
+
+memory creation phase:
+- During the memory creation phase, the JavaScript engine allocates memory for variables and functions.
+
+execution phase:
+- In the execution phase, the JavaScript engine executes the code line by line.
+
+
+call stack:
+- The call stack is a data structure that keeps track of function calls in JavaScript.
+- It operates on a Last In, First Out (LIFO) principle.
+- When a function is called, a new execution context is created and pushed onto the call stack.
+- When the function execution is complete, its context is popped off the stack.
+- If a function calls another function, the new function's context is pushed onto the stack, and so on.
+- If an error occurs, the call stack will show the sequence of function calls that led to the error.
+- The call stack is crucial for debugging, as it helps trace the sequence of function calls leading to an error.
+- The call stack can be visualized as a stack of plates, where the last plate added is the first one to be removed.
+- The call stack is limited in size, and if it exceeds the limit, a "stack overflow" error occurs.
+- The call stack is managed by the JavaScript engine, which handles the execution context and keeps track of the current function being executed.
+- The call stack is essential for understanding how JavaScript handles asynchronous operations, such as callbacks and promises.
