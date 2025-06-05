@@ -46,7 +46,7 @@ function message(username){
 // console.log((message()))
 
 
-function calculatePrice(...num1){ // returns all the vaue given in parameter because of rest operator...
+function calculatePrice(...num1){ // returns all the value given in parameter because of rest operator...
     return num1
 }
 console.log(calculatePrice(2, 4, 5))
