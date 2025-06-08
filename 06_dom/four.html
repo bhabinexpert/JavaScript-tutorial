@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhabin JS learning</title>
+
+</head>
+<body style="background-color: blanchedalmond; color: rgba(223, 92, 168, 0.901);">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    
+</body>
+<script>
+    // function to add the value in list items
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)        
+    }
+    addLanguage("Python")
+    addLanguage("Java")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptiLanguage("TypeScript")
+
+
+    // edit dom:
+
+    const edit1 = document.querySelector("li:nth-child(2)")
+    // edit1.innerHTML = "React" 
+    const newli = document.createElement('li')
+    newli.textContent = "React"
+    edit1.replaceWith(newli)
+
+
+    const edit2 = document.querySelector("li:first-child")
+    edit2.outerHTML = '<li> NodeJS </li>'
+
+
+
+    // remove 
+
+    const removeLang = document.querySelector("li:last-child")
+    removeLang.remove()
+
+</script>
+</html>
