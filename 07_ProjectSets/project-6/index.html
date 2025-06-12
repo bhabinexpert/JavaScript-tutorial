@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body{
+            text-align: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1 style="font-family: monospace;font-size: 20px; text-align: center;"> Pressing Start button will continiously changes the background color and stop will stop at the color which is being displayed </h1>
+
+    <button id="start" style="border-radius: 5px; border: 5px solid; font-size: 20px;
+        padding: 12px 24px;">Start</button>
+    <button id="stop" style="border-radius: 5px; border: 5px solid; font-size: 20px;
+        padding: 12px 24px;"> Stop</button>
+    
+</body>
+<script>
+    // generate random color
+
+    const randomColor = function(){
+        const hex = "0123456789ABCDEF"
+        let color = '#'
+        for(let i = 0; i<6; i++){
+            color+= hex[Math.floor(Math.random() * 16)]
+        }
+        return color
+    }
+
+    let intervalId
+    const startChangingColor = function(){
+        if(!intervalId){
+            intervalId = setInterval(changeBgColor, 1000) // while stop pressed then the value of interval id became numm so we check first iff the value is null or not and then we assigned the value to interval id through this method.
+        }
+        function changeBgColor (){
+            document.body.style.backgroundColor = randomColor()
+        }
+    }
+
+    const stopChangingColor = function(){
+        clearInterval(intervalId)
+        intervalId = null; // flushing the value after used 
+    }
+
+    document.getElementById('start').addEventListener('click',startChangingColor)
+
+    document.getElementById('stop').addEventListener('click',stopChangingColor)
+
+    
+</script>
+</html>

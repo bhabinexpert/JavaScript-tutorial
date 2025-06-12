@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Bhabin </h1>
+    <button id = "stop"> Stop</button>
+    
+</body>
+<script>
+
+    const printVabin = function(){
+        console.log("Vabin")
+    }
+
+    const changeHeading = function () {document.querySelector('h1').innerHTML = "Js Practising"
+    }
+
+    const change = setTimeout(changeHeading, 2000)
+    // runs one time after some timeout
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(change)
+        console.log("Stopped")
+    })
+
+</script>
+</html>
