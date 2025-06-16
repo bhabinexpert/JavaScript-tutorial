@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">green</buttton>
+</body>
+<script>
+// <<<<<< lexical Scope:
+//  it can access the variable describe in outer functions inside the inner function.
+
+    // function init(){
+    //     let name = "Mozilla";
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+// closure::>>>>>>
+
+    function makeFunc(){
+        const name ="Mozilla";
+        function displayName(){
+            console.log(name)
+        }
+        return displayName;
+    } // returning the function returns the whole lexical scope 
+
+    const myFunc = makeFunc();
+    myFunc();
+
+
+</script>
+
+<script>
+    // applicable for few buttons only :
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `Orange`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `Green`
+    // }
+
+
+    // applicable for numerous button:
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+       return function (){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+
+    
+</script>
+</html>
