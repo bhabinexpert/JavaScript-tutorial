@@ -20,7 +20,7 @@ const newString = gameName.substring(0, 4); // slices the string from 0 index to
 console.log(newString)
 
 
-const anotherString = gameName.slice(-1, 5)
+const anotherString = gameName.slice(-1, -3)
 console.log(anotherString);
 
 
